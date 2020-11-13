@@ -1,0 +1,26 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "Log workouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJessee1371/Fitness-Tracker.git"
+  },
+  "author": "Jon Jessee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JJessee1371/Fitness-Tracker/issues"
+  },
+  "homepage": "https://github.com/JJessee1371/Fitness-Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.14",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
