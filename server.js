@@ -9,8 +9,8 @@ const apiRoutes = require(path.join(__dirname, './routes/api-routes'));
 const htmlRoutes = require(path.join(__dirname, './routes/html-routes'));
 
 //Use routing files
-app.use(apiRoutes);
-app.use(htmlRoutes);
+app.use('/api/workouts', apiRoutes);
+app.use('/', htmlRoutes);
 
 //Log route requests
 app.use(logger('dev'));
