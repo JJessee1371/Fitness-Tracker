@@ -23,7 +23,13 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //Connect to Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dbworkout', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dbworkout', 
+{ 
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false 
+});
 
 //Server litening for activity
 app.listen(PORT, () => {
