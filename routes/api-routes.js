@@ -22,12 +22,20 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
+        
         let savedWorkouts = [];
         const previousWorkout = await db.Workout.findById(req.params.id);
         savedWorkouts = previousWorkout.exercises;
         let allExercises = [...savedWorkouts, req.body];
+
+        
+        previousWorkout.exercises = allExercises;
+        await previousWorkout.save();
+
+        console.log('HIT', previousWorkout);
         res.json(allExercises);
     } catch(err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });

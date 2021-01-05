@@ -49,8 +49,6 @@ const WorkoutSchema = new Schema({
             } 
         }
     ],
-
-    
 },
 //Virtual property for total duration of exercises
 {

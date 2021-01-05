@@ -8,16 +8,16 @@ const PORT = process.env.PORT || 3000;
 const apiRoutes = require(path.join(__dirname, './routes/api-routes'));
 const htmlRoutes = require(path.join(__dirname, './routes/html-routes'));
 
-//Use routing files
-app.use('/api/workouts', apiRoutes);
-app.use('/', htmlRoutes);
-
 //Log route requests
 app.use(logger('dev'));
 
 //Data parsing middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Use routing files
+app.use('/api/workouts', apiRoutes);
+app.use('/', htmlRoutes);
 
 //Contents of public folder staticly served
 app.use(express.static('public'));
