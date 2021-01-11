@@ -29,7 +29,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dbWorkout',
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false 
-});
+})
+.then(x => console.log('DB connection successful'));
 
 //Server litening for activity
 app.listen(PORT, () => {
